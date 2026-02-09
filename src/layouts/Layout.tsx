@@ -17,7 +17,7 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
 
     return (
         <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
-            <div className="max-w-md mx-auto min-h-screen flex flex-col bg-white shadow-xl overflow-hidden relative">
+            <div className="max-w-md mx-auto h-screen flex flex-col bg-white shadow-xl overflow-hidden relative">
                 <header className="bg-white px-6 py-4 border-b border-gray-100 flex items-center justify-between sticky top-0 z-10">
                     <h1 className="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
                         AdoraLeaves
