@@ -48,9 +48,9 @@ export function Welcome({ onStart }: WelcomeProps) {
     const checkRegistration = async (telegramId: number) => {
         setIsLoading(true);
         try {
-            //const response = await fetch('https://express-folder-files-architecture-sample.onrender.com/api/telegram/checkRegistration', {
+            const response = await fetch('https://express-folder-files-architecture-sample.onrender.com/api/telegram/checkRegistration', {
 
-            const response = await fetch('http://localhost:3000/api/telegram/checkRegistration', {
+                //const response = await fetch('http://localhost:3000/api/telegram/checkRegistration', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
