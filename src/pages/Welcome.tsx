@@ -30,6 +30,8 @@ export function Welcome({ onStart }: WelcomeProps) {
             if (user && user.id) {
                 checkRegistration(user.id);
             } else {
+
+                checkRegistration(0);
                 // Fallback for testing effectively or if no user. 
                 // In production Telegram, user.id should be there.
                 // For now, if no user, we might want to just show the button or block?
@@ -46,7 +48,9 @@ export function Welcome({ onStart }: WelcomeProps) {
     const checkRegistration = async (telegramId: number) => {
         setIsLoading(true);
         try {
-            const response = await fetch('https://express-folder-files-architecture-sample.onrender.com/api/telegram/checkRegistration', {
+            //const response = await fetch('https://express-folder-files-architecture-sample.onrender.com/api/telegram/checkRegistration', {
+
+            const response = await fetch('http://localhost:3000/api/telegram/checkRegistration', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -202,7 +206,7 @@ export function Welcome({ onStart }: WelcomeProps) {
                             
                      This seems correct and robust.
                   */}
-                {!isLoading && (isRegistered === true || isRegistered === null) && (
+                {/* {!isLoading && (isRegistered === true || isRegistered === null) && (
                     <button
                         onClick={onStart}
                         className="group flex items-center gap-3 bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold shadow-lg shadow-primary-900/20 hover:bg-opacity-95 transition-all active:scale-95"
@@ -210,7 +214,7 @@ export function Welcome({ onStart }: WelcomeProps) {
                         <span>Go to Dashboard</span>
                         <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                     </button>
-                )}
+                )} */}
             </motion.div>
 
             <div className="absolute bottom-8 text-xs text-indigo-200/60 font-medium">
